@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Event Handling</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script type="text/babel">
+        var Comment = React.createClass({
+            edit : function(){
+                alert('Editing Comment');
+            },
+            remove : function(){
+                alert('Removing Comment');
+            },
+            render : function(){
+                return(
+                    <div>
+                        <div> {this.props.children} </div>
+                        <button onClick= {this.edit}> Edit </button>
+                        <button onClick= {this.remove}> Remove </button>
+
+                    </div>
+
+
+                );
+            }
+
+
+        });
+
+        ReactDOM.render(
+            <div>
+                <Comment> Hi my name is sunil </Comment>
+                <Comment> This is a good tutorial </Comment>
+                <Comment> It's based on React </Comment>
+                <Comment> Basic React Tutorial </Comment>
+            </div>, document.getElementById('container')
+
+        );
+
+    </script>
+
+</body>
+</html>
